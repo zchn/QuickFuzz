@@ -130,7 +130,7 @@ library
             Test.QuickFuzz.Gen.Code.Lua
 
         build-depends:
-            language-c, language-ecmascript, language-python, language-go, language-lua, ethereum-analyzer-deps, pretty
+            language-c, language-ecmascript, language-python, language-go, language-lua, ethereum-analyzer-deps, hex, pretty
     
     if flag(image) || flag(all)
         cpp-options: -DIMAGE

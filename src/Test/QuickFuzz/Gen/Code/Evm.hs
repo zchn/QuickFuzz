@@ -12,6 +12,7 @@ import Blockchain.VM.Code
 import Blockchain.VM.Opcodes
 
 import Data.ByteString.Lazy
+import Data.Hex
 import Data.List
 
 import Test.QuickCheck
@@ -31,7 +32,7 @@ devShow ''EvmBytecode
 
 evmInfo :: FormatInfo EvmBytecode NoActions
 evmInfo = def
-  { encode = fromStrict . codeBytes . compile
+  { encode = hex . fromStrict . codeBytes . compile
     -- encode = pack . formatCode . compile
   , random = arbitrary
   , value = show
