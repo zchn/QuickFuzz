@@ -1,5 +1,5 @@
 {-# LANGUAGE TemplateHaskell, CPP #-}
-module Formats 
+module Formats
 ( formats
 ) where
 
@@ -46,7 +46,7 @@ import Test.QuickFuzz.Gen.Network
 
 formats = [
 
--- Archives 
+-- Archives
 #ifdef ARCH
     ("tar", 'tarInfo),
     ("zip", 'zipInfo),
@@ -80,6 +80,7 @@ formats = [
 -- Source Code
 #ifdef CODE
     ("c",  'cInfo),
+    ("evm",  'evmInfo),
     ("js", 'jsInfo),
     ("py", 'pyInfo),
     ("go", 'goInfo),
@@ -100,8 +101,6 @@ formats = [
 #endif
 
 -- Base
-    ("regex", 'regexInfo) 
-    
+    ("regex", 'regexInfo)
+
     ]
-
-

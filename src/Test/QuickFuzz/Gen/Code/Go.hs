@@ -14,7 +14,7 @@ import Control.Monad.Trans.State
 import Data.List
 
 import Language.Go.Syntax.AST
-import Language.Go.Pretty  
+import Language.Go.Pretty
 import Text.PrettyPrint (render)
 
 import Test.QuickFuzz.Derive.Arbitrary
@@ -29,9 +29,9 @@ import qualified Data.ByteString.Lazy.Char8 as L8
 devArbitrary ''GoSource
 
 goInfo :: FormatInfo GoSource NoActions
-goInfo = def 
+goInfo = def
     { encode = L8.pack . render . pretty
     , random = arbitrary
     , value = show
-    , ext = "go" 
-    } 
+    , ext = "go"
+    }
